@@ -3,3 +3,6 @@ pypdf
 img2pdf
 PyMuPDF
 docx2txt
+pikepdf
+pytesseract
+pdf2image
