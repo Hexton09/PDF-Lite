@@ -33,10 +33,10 @@ jobs:
       - name: Build APK
         run: |
           pip install flet
-          flet build apk --no-cache
+          flet build apk
         
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-lite-final-apk
+          name: pdf-lite-v102-apk
           path: build/apk/*.apk
