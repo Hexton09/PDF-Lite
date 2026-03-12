@@ -1,24 +1,22 @@
 [tool.flet]
 app_name = "PDF Lite"
 assets_dir = "assets"
-main_module = "main" # This matches your filename app.py
+main_module = "main"
 
 [tool.flet.android]
-package_name = "com.hexton.pdflite"
-version = "1.0.3"
-build_number = 4
+package_name = "com.rahul.pdflite"
+version = "1.0.5"
+build_number = 6
 
-# Visuals
+# Visuals - Files must be in /assets folder
 icon = "assets/icon.png"
 splash_image = "assets/splash.png"
-splash_color = "#1976D2" 
+splash_color = "#1976D2"
 
-# Permissions
 permissions = [
     "android.permission.READ_EXTERNAL_STORAGE",
     "android.permission.WRITE_EXTERNAL_STORAGE",
-    "android.permission.MANAGE_EXTERNAL_STORAGE",
-    "android.permission.READ_MEDIA_IMAGES"
+    "android.permission.MANAGE_EXTERNAL_STORAGE"
 ]
 
 [tool.flet.android.manifest]
