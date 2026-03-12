@@ -1,8 +1,4 @@
-streamlit
-pypdf
-img2pdf
-PyMuPDF
-docx2txt
-pikepdf
-pytesseract
-pdf2image
+flet==0.21.0
+flet-permission-handler==0.1.0
+pypdf==4.0.1
+img2pdf==0.5.1

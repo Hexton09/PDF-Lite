@@ -1,0 +1,24 @@
+[tool.flet]
+app_name = "PDF Lite"
+assets_dir = "assets"
+
+[tool.flet.android]
+package_name = "com.rahul.pdflite"
+version = "1.0.0"
+build_number = 1
+
+# Visuals
+icon = "assets/icon.png"
+splash_image = "assets/splash.png"
+# This color fills the background behind your splash image
+splash_color = "#3498db" 
+
+# Offline Storage Permissions
+permissions = [
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.MANAGE_EXTERNAL_STORAGE"
+]
+
+[tool.flet.android.manifest]
+"application.@android:requestLegacyExternalStorage" = "true"
