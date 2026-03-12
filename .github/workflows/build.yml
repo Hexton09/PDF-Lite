@@ -1,9 +1,10 @@
 name: Build Flet APK
 on: 
-  workflow_dispatch: # This enables the manual "Run" button
+  workflow_dispatch:
 
 jobs:
   build:
+    # Now only allows execution if the 'android' branch is selected
     if: github.ref == 'refs/heads/android'
     runs-on: ubuntu-latest
     steps:
@@ -15,24 +16,26 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12' # Latest stable Python
+          python-version: '3.11'
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # Highly recommended for Android builds
+          distribution: 'zulu'
           java-version: '17'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          cache: true # Speeds up future manual runs
+
+      - name: Accept Android Licenses
+        run: yes | sdkmanager --licenses || true
 
       - name: Install Flet & Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install flet cryptography pikepdf pypdf
+          pip install flet cryptography pikepdf pypdf 
 
       - name: Build APK
         run: flet build apk
@@ -40,6 +43,5 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-lite-latest-apk
+          name: pdf-lite-android-apk
           path: build/apk/*.apk
-          compression-level: 9 # Max compression for smaller download
