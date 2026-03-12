@@ -5,10 +5,9 @@ main_module = "main"
 
 [tool.flet.android]
 package_name = "com.rahul.pdflite"
-version = "1.0.5"
-build_number = 6
+version = "1.0.6"
+build_number = 7
 
-# Visuals - Files must be in /assets folder
 icon = "assets/icon.png"
 splash_image = "assets/splash.png"
 splash_color = "#1976D2"
