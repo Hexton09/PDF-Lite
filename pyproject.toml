@@ -1,28 +1,25 @@
 [tool.flet]
 app_name = "PDF Lite"
 assets_dir = "assets"
-main_module = "app" # Ensure this matches your filename (app.py)
+main_module = "app" # This matches your filename app.py
 
 [tool.flet.android]
 package_name = "com.hexton.pdflite"
-version = "1.0.1"
-build_number = 2
+version = "1.0.3"
+build_number = 4
 
 # Visuals
 icon = "assets/icon.png"
 splash_image = "assets/splash.png"
-splash_color = "#1976D2" # Matched to your blue AppBar color
+splash_color = "#1976D2" 
 
-# Modern Android Permissions
+# Permissions
 permissions = [
     "android.permission.READ_EXTERNAL_STORAGE",
     "android.permission.WRITE_EXTERNAL_STORAGE",
     "android.permission.MANAGE_EXTERNAL_STORAGE",
-    "android.permission.READ_MEDIA_IMAGES", # Required for JPG to PDF
-    "android.permission.READ_MEDIA_VIDEO",
-    "android.permission.READ_MEDIA_AUDIO"
+    "android.permission.READ_MEDIA_IMAGES"
 ]
 
 [tool.flet.android.manifest]
 "application.@android:requestLegacyExternalStorage" = "true"
-"uses-permission.@android:name" = "android.permission.MANAGE_EXTERNAL_STORAGE"
