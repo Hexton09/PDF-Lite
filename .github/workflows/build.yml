@@ -7,8 +7,7 @@ jobs:
     if: github.ref == 'refs/heads/android'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           ref: android
 
@@ -31,17 +30,13 @@ jobs:
       - name: Accept Android Licenses
         run: yes | sdkmanager --licenses || true
 
-      - name: Install Flet CLI
-        run: |
-          python -m pip install --upgrade pip
-          pip install flet
-
       - name: Build APK
-        # We add --pypi-proxy to help with potential connection hiccups
-        run: flet build apk
+        run: |
+          pip install flet
+          flet build apk --no-cache
         
-      - name: Upload APK Artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-lite-android-apk
+          name: pdf-lite-final-apk
           path: build/apk/*.apk
