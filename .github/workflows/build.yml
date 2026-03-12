@@ -27,9 +27,6 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Accept Android Licenses
-        run: yes | sdkmanager --licenses || true
-
       - name: Build APK
         run: |
           pip install flet
@@ -38,5 +35,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-lite-final-apk
+          name: pdf-lite-v105-apk
           path: build/apk/*.apk
