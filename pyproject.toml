@@ -1,7 +1,7 @@
 [tool.flet]
 app_name = "PDF Lite"
 assets_dir = "assets"
-main_module = "app" # This matches your filename app.py
+main_module = "main" # This matches your filename app.py
 
 [tool.flet.android]
 package_name = "com.hexton.pdflite"
