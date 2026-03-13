@@ -166,6 +166,3 @@ with main_tabs[3]:
                     st.success("Rebuilt successfully!")
                     st.download_button("Download Fixed PDF", out_r.getvalue(), "fixed.pdf")
             except: st.error("Corruption too severe for automated repair.")
-
-st.sidebar.markdown("---")
-st.sidebar.info("Developed with Python & Streamlit. Files are processed in-memory (RAM) for privacy.")
